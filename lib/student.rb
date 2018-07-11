@@ -5,6 +5,12 @@ class Student
     sql = <<-SQL
       SELECT * FROM students WHERE id = row[0] LIMIT 1
     SQL
+
+    row_data = DB[:conn].execute(sql)
+
+    @id = row_data[0]
+    @name = row_data[1]
+    @grade = row_data[2]
   end
 
   def self.all
