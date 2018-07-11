@@ -8,9 +8,8 @@ class Student
 
     row_data = DB[:conn].execute(sql)
 
-    @id = row_data[0]
-    @name = row_data[1]
-    @grade = row_data[2]
+    student = Student.new(row_data[0], row_data[1], row_data[2])
+    
   end
 
   def self.all
