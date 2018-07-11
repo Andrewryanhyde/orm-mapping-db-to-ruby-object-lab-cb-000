@@ -3,7 +3,7 @@ class Student
 
   def self.new_from_db(row)
     sql = <<-SQL
-      SELECT * FROM students WHERE id = row LIMIT 1
+      SELECT * FROM students WHERE id = row[0] LIMIT 1
     SQL
   end
 
